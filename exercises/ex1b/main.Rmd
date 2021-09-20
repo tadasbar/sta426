@@ -1,0 +1,32 @@
+# Exercise 1 part b {.tabset}
+
+First, the 100 sample values are obtained.
+
+```{r, echo=TRUE}
+s = log(rnorm(n=100, mean=1, sd=0.25))
+```
+
+The data is then plotted.
+
+## Histogram
+
+```{r, echo=FALSE}
+hist(s, breaks=10, col="cornflowerblue",
+    xlab="x",
+    main="Log-normal distribution")
+```
+
+## Histogram on log-scale
+
+```{r, echo=FALSE}
+hist(exp(s), breaks=10, col="cornflowerblue",
+    xlab="x",
+    main="Log-normal distribution on the log scale")
+```
+
+#
+
+## Parameters of the sample
+
+- expected value: `r signif(mean(s), 3)`
+- variance: `r signif(var(s), 3)`
