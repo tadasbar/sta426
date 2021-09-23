@@ -3,12 +3,12 @@
 First, the 100 sample values are obtained.
 
 ```{r, echo=TRUE}
-s = log(rnorm(n=100, mean=1, sd=0.25))
+s = rlnorm(n=100, meanlog=1, sdlog=0.25)
 ```
 
 The data is then plotted.
 
-## Histogram
+## Histogram of the distribution
 
 ```{r, echo=FALSE}
 hist(s, breaks=10, col="cornflowerblue",
@@ -16,17 +16,17 @@ hist(s, breaks=10, col="cornflowerblue",
     main="Log-normal distribution")
 ```
 
-## Histogram on log-scale
+## Distribution on the log-scale
 
 ```{r, echo=FALSE}
-hist(exp(s), breaks=10, col="cornflowerblue",
+plot(density(s), log="x",
     xlab="x",
     main="Log-normal distribution on the log scale")
 ```
 
 #
 
-## Parameters of the sample
+## Parameters of the sample distribution
 
-- expected value: `r signif(mean(s), 3)`
-- variance: `r signif(var(s), 3)`
+- sample average: `r signif(mean(s), 3)`
+- sample variance: `r signif(var(s), 3)`
